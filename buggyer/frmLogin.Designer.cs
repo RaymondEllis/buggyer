@@ -48,7 +48,7 @@
 			this.txtPassword.PasswordChar = '*';
 			this.txtPassword.Size = new System.Drawing.Size(164, 20);
 			this.txtPassword.TabIndex = 1;
-			this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+			this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
 			// 
 			// txtUID
 			// 
@@ -160,7 +160,7 @@
 			this.MaximizeBox = false;
 			this.Name = "frmLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Buggyer - Login";
+			this.Text = "buggyer - Login";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
 			this.Shown += new System.EventHandler(this.frmLogin_Shown);
 			this.ResumeLayout(false);

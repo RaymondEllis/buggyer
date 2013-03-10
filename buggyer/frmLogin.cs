@@ -87,10 +87,30 @@ namespace buggyer
 				sw.Write(data);
 			}
 		}
-
-		private void txtPassword_TextChanged(object sender, EventArgs e)
+		
+		private void txtPassword_KeyDown(object sender, KeyEventArgs e)
 		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				tryConnect();
+				e.Handled = true;
+			}
+		}
 
+		private void tryConnect()
+		{
+			StringBuilder str = new StringBuilder();
+			str.Append("SERVER="); str.Append(txtServer.Text); str.Append(';');
+			str.Append("DATABASE="); str.Append(txtDatabase.Text); str.Append(';');
+			str.Append("UID="); str.Append(txtUID.Text); str.Append(';');
+			str.Append("PASSWORD="); str.Append(txtPassword.Text); str.Append(';');
+
+			str.Append("Convert Zero Datetime=True;");
+			if (Server.Connect(str.ToString()))
+			{
+				//ToDo: Will show other form to figerout what to do next.
+				this.Close();
+			}
 		}
 
 	}
