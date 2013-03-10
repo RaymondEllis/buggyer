@@ -48,6 +48,7 @@
 			this.txtPassword.PasswordChar = '*';
 			this.txtPassword.Size = new System.Drawing.Size(164, 20);
 			this.txtPassword.TabIndex = 1;
+			this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
 			// 
 			// txtUID
 			// 
@@ -110,6 +111,8 @@
 			// 
 			// chkSaveServer
 			// 
+			this.chkSaveServer.Checked = true;
+			this.chkSaveServer.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkSaveServer.Location = new System.Drawing.Point(258, 9);
 			this.chkSaveServer.Name = "chkSaveServer";
 			this.chkSaveServer.Size = new System.Drawing.Size(55, 20);
@@ -119,6 +122,8 @@
 			// 
 			// chkSaveDatabase
 			// 
+			this.chkSaveDatabase.Checked = true;
+			this.chkSaveDatabase.CheckState = System.Windows.Forms.CheckState.Checked;
 			this.chkSaveDatabase.Location = new System.Drawing.Point(258, 36);
 			this.chkSaveDatabase.Name = "chkSaveDatabase";
 			this.chkSaveDatabase.Size = new System.Drawing.Size(55, 20);
@@ -156,6 +161,8 @@
 			this.Name = "frmLogin";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Buggyer - Login";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
+			this.Shown += new System.EventHandler(this.frmLogin_Shown);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
