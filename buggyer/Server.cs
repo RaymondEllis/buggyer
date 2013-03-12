@@ -10,6 +10,8 @@ namespace buggyer
 	static class Server
 	{
 		public static MySqlConnection Conn;
+		public static string Table;
+		public static string UID;
 
 		public static bool Connect(String str)
 		{
@@ -31,6 +33,7 @@ namespace buggyer
 				{ ShowError("Invalid username/password!"); }
 				else
 				{ ShowError(e.Message); }
+				Conn = null;
 				return false;
 			}
 		}

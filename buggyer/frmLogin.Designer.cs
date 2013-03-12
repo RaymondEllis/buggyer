@@ -39,11 +39,14 @@
 			this.chkSaveServer = new System.Windows.Forms.CheckBox();
 			this.chkSaveDatabase = new System.Windows.Forms.CheckBox();
 			this.chkSaveUID = new System.Windows.Forms.CheckBox();
+			this.txtTable = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
+			this.chkSaveTable = new System.Windows.Forms.CheckBox();
 			this.SuspendLayout();
 			// 
 			// txtPassword
 			// 
-			this.txtPassword.Location = new System.Drawing.Point(88, 88);
+			this.txtPassword.Location = new System.Drawing.Point(88, 114);
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.PasswordChar = '*';
 			this.txtPassword.Size = new System.Drawing.Size(164, 20);
@@ -52,7 +55,7 @@
 			// 
 			// txtUID
 			// 
-			this.txtUID.Location = new System.Drawing.Point(88, 62);
+			this.txtUID.Location = new System.Drawing.Point(88, 88);
 			this.txtUID.Name = "txtUID";
 			this.txtUID.Size = new System.Drawing.Size(164, 20);
 			this.txtUID.TabIndex = 0;
@@ -62,7 +65,7 @@
 			this.txtServer.Location = new System.Drawing.Point(88, 10);
 			this.txtServer.Name = "txtServer";
 			this.txtServer.Size = new System.Drawing.Size(164, 20);
-			this.txtServer.TabIndex = 5;
+			this.txtServer.TabIndex = 6;
 			// 
 			// label1
 			// 
@@ -78,7 +81,7 @@
 			this.txtDatabase.Location = new System.Drawing.Point(88, 36);
 			this.txtDatabase.Name = "txtDatabase";
 			this.txtDatabase.Size = new System.Drawing.Size(164, 20);
-			this.txtDatabase.TabIndex = 6;
+			this.txtDatabase.TabIndex = 7;
 			// 
 			// label2
 			// 
@@ -92,7 +95,7 @@
 			// label3
 			// 
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(12, 62);
+			this.label3.Location = new System.Drawing.Point(12, 88);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(70, 20);
 			this.label3.TabIndex = 1;
@@ -102,7 +105,7 @@
 			// label4
 			// 
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(12, 88);
+			this.label4.Location = new System.Drawing.Point(12, 114);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(70, 20);
 			this.label4.TabIndex = 1;
@@ -116,7 +119,7 @@
 			this.chkSaveServer.Location = new System.Drawing.Point(258, 9);
 			this.chkSaveServer.Name = "chkSaveServer";
 			this.chkSaveServer.Size = new System.Drawing.Size(55, 20);
-			this.chkSaveServer.TabIndex = 4;
+			this.chkSaveServer.TabIndex = 5;
 			this.chkSaveServer.Text = "Save";
 			this.chkSaveServer.UseVisualStyleBackColor = true;
 			// 
@@ -127,33 +130,62 @@
 			this.chkSaveDatabase.Location = new System.Drawing.Point(258, 36);
 			this.chkSaveDatabase.Name = "chkSaveDatabase";
 			this.chkSaveDatabase.Size = new System.Drawing.Size(55, 20);
-			this.chkSaveDatabase.TabIndex = 3;
+			this.chkSaveDatabase.TabIndex = 4;
 			this.chkSaveDatabase.Text = "Save";
 			this.chkSaveDatabase.UseVisualStyleBackColor = true;
 			// 
 			// chkSaveUID
 			// 
-			this.chkSaveUID.Location = new System.Drawing.Point(258, 62);
+			this.chkSaveUID.Location = new System.Drawing.Point(258, 88);
 			this.chkSaveUID.Name = "chkSaveUID";
 			this.chkSaveUID.Size = new System.Drawing.Size(55, 20);
 			this.chkSaveUID.TabIndex = 2;
 			this.chkSaveUID.Text = "Save";
 			this.chkSaveUID.UseVisualStyleBackColor = true;
 			// 
+			// txtTable
+			// 
+			this.txtTable.Location = new System.Drawing.Point(88, 62);
+			this.txtTable.Name = "txtTable";
+			this.txtTable.Size = new System.Drawing.Size(164, 20);
+			this.txtTable.TabIndex = 8;
+			// 
+			// label5
+			// 
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(12, 62);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(70, 20);
+			this.label5.TabIndex = 1;
+			this.label5.Text = "Table:";
+			this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// chkSaveTable
+			// 
+			this.chkSaveTable.Location = new System.Drawing.Point(258, 62);
+			this.chkSaveTable.Name = "chkSaveTable";
+			this.chkSaveTable.Size = new System.Drawing.Size(55, 20);
+			this.chkSaveTable.TabIndex = 3;
+			this.chkSaveTable.Text = "Save";
+			this.chkSaveTable.UseVisualStyleBackColor = true;
+			// 
 			// frmLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(316, 123);
+			this.ClientSize = new System.Drawing.Size(316, 158);
+			this.Controls.Add(this.chkSaveTable);
 			this.Controls.Add(this.chkSaveUID);
 			this.Controls.Add(this.chkSaveDatabase);
 			this.Controls.Add(this.chkSaveServer);
 			this.Controls.Add(this.label4);
+			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.txtDatabase);
 			this.Controls.Add(this.txtServer);
+			this.Controls.Add(this.txtTable);
 			this.Controls.Add(this.txtUID);
 			this.Controls.Add(this.txtPassword);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -181,5 +213,8 @@
 		private System.Windows.Forms.CheckBox chkSaveServer;
 		private System.Windows.Forms.CheckBox chkSaveDatabase;
 		private System.Windows.Forms.CheckBox chkSaveUID;
+		private System.Windows.Forms.TextBox txtTable;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.CheckBox chkSaveTable;
 	}
 }

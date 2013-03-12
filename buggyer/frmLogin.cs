@@ -28,13 +28,12 @@ namespace buggyer
 		private void load_Settings()
 		{
 			if (System.IO.File.Exists("settings.sd") == false) return;
-			String data;
+			SimpleD.Group g = new SimpleD.Group();
+			String results = null;
 			using (System.IO.StreamReader sr = new System.IO.StreamReader("settings.sd"))
 			{
-				data = sr.ReadToEnd();
+				results = g.FromString(sr.ReadToEnd());
 			}
-			SimpleD.Group g = new SimpleD.Group();
-			String results = g.FromString(data);
 			if (results == null || results.Length == 0)
 			{
 				foreach (SimpleD.Property p in g.Properties)
@@ -48,6 +47,9 @@ namespace buggyer
 						case "savedatabase":
 							if (bool.TryParse(p.Value, out chk)) chkSaveDatabase.Checked = chk;
 							break;
+						case "savetable":
+							if (bool.TryParse(p.Value, out chk)) chkSaveTable.Checked = chk;
+							break;
 						case "saveuid":
 							if (bool.TryParse(p.Value, out chk)) chkSaveUID.Checked = chk;
 							break;
@@ -57,6 +59,9 @@ namespace buggyer
 							break;
 						case "database":
 							txtDatabase.Text = p.Value;
+							break;
+						case "table":
+							txtTable.Text = p.Value;
 							break;
 						case "uid":
 							txtUID.Text = p.Value;
@@ -76,9 +81,11 @@ namespace buggyer
 			SimpleD.Group g = new SimpleD.Group();
 			g.Properties.Add(new SimpleD.Property("SaveServer", chkSaveServer.Checked.ToString()));
 			g.Properties.Add(new SimpleD.Property("SaveDatabase", chkSaveDatabase.Checked.ToString()));
+			g.Properties.Add(new SimpleD.Property("SaveTable", chkSaveTable.Checked.ToString()));
 			g.Properties.Add(new SimpleD.Property("SaveUID", chkSaveUID.Checked.ToString()));
 			if (chkSaveServer.Checked) g.Properties.Add(new SimpleD.Property("Server", txtServer.Text));
 			if (chkSaveDatabase.Checked) g.Properties.Add(new SimpleD.Property("Database", txtDatabase.Text));
+			if (chkSaveTable.Checked) g.Properties.Add(new SimpleD.Property("Table", txtTable.Text));
 			if (chkSaveUID.Checked) g.Properties.Add(new SimpleD.Property("UID", txtUID.Text));
 
 			String data = g.ToString();
@@ -99,6 +106,9 @@ namespace buggyer
 
 		private void tryConnect()
 		{
+			Server.UID = txtUID.Text;
+			Server.Table = txtTable.Text;
+
 			StringBuilder str = new StringBuilder();
 			str.Append("SERVER="); str.Append(txtServer.Text); str.Append(';');
 			str.Append("DATABASE="); str.Append(txtDatabase.Text); str.Append(';');

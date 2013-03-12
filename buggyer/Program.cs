@@ -16,6 +16,10 @@ namespace buggyer
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new frmLogin());
+			if (Server.Conn != null)
+			{
+				Application.Run(new frmBugs());
+			}
 		}
 	}
 }
