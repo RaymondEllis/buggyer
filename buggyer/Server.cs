@@ -9,22 +9,23 @@ namespace buggyer
 {
 	static class Server
 	{
-		public static MySqlConnection Conn;
+		public static MySqlConnection Connection;
 		public static string Table;
 		public static string UID;
 
 		public static bool Connect(String str)
 		{
-			Conn = new MySqlConnection(str);
+			Connection = new MySqlConnection(str);
+			//Test the connection, then return the results.
 			return Open() && Close();
 		}
 
 		public static bool Open()
 		{
-			if (Conn.State == System.Data.ConnectionState.Open) return true;
+			if (Connection.State == System.Data.ConnectionState.Open) return true;
 			try
 			{
-				Conn.Open();
+				Connection.Open();
 				return true;
 			}
 			catch (MySqlException e)
@@ -33,7 +34,7 @@ namespace buggyer
 				{ ShowError("Invalid username/password!"); }
 				else
 				{ ShowError(e.Message); }
-				Conn = null;
+				Connection = null;
 				return false;
 			}
 		}
@@ -41,7 +42,7 @@ namespace buggyer
 		{
 			try
 			{
-				Conn.Close();
+				Connection.Close();
 				return true;
 			}
 			catch (MySqlException e) { ShowError(e.Message); }

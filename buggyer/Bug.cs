@@ -20,17 +20,17 @@ namespace buggyer
 		public string Status;
 		public string Comments;
 
-		public Bug(MySqlDataReader r)
+		public Bug(MySqlDataReader reader)
 		{
-			id = (int)r["id"];
-			Summary = (string)r["summary"];
-			Description = (string)r["description"];
-			ReportedBy = (string)r["reported by"];
-			ReportedAt = (DateTime)r["reported at"];
-			AssignedTo = (string)r["assigned to"];
-			Priority = (sbyte)r["priority"];
-			Status = (string)r["status"];
-			Comments = (string)r["comments"];
+			id = (int)reader["id"];
+			Summary = (string)reader["summary"];
+			Description = (string)reader["description"];
+			ReportedBy = (string)reader["reported by"];
+			ReportedAt = (DateTime)reader["reported at"];
+			AssignedTo = (string)reader["assigned to"];
+			Priority = (sbyte)reader["priority"];
+			Status = (string)reader["status"];
+			Comments = (string)reader["comments"];
 		}
 
 		public override string ToString()

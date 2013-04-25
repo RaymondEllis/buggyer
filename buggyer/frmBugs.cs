@@ -25,7 +25,7 @@ namespace buggyer
 			//Get bugs for the current user.
 			if (Server.Open())
 			{
-				MySqlCommand cmd = new MySqlCommand("SELECT * FROM `" + Server.Table + "` WHERE `assigned to` = '" + Server.UID + "'", Server.Conn);
+				MySqlCommand cmd = new MySqlCommand("SELECT * FROM `" + Server.Table + "` WHERE `assigned to` = '" + Server.UID + "'", Server.Connection);
 				MySqlDataReader reader = null;
 				try
 				{
@@ -45,17 +45,17 @@ namespace buggyer
 		private void lstBugs_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (lstBugs.SelectedIndex == -1) return;
-			Bug b = Bugs[lstBugs.SelectedIndex];
-			lblDescription.Text = b.Description;
+			Bug bug = Bugs[lstBugs.SelectedIndex];
+			lblDescription.Text = bug.Description;
 
-			lblReportedBy.Text = b.ReportedBy;
-			lblReportedAt.Text = b.ReportedAt.ToString();
+			lblReportedBy.Text = bug.ReportedBy;
+			lblReportedAt.Text = bug.ReportedAt.ToString();
 
-			txtAssignedTo.Text = b.AssignedTo;
+			txtAssignedTo.Text = bug.AssignedTo;
 
-			txtPriority.Text = b.Priority.ToString();
-			txtStatus.Text = b.Status;
-			txtComments.Text = b.Comments;
+			txtPriority.Text = bug.Priority.ToString();
+			txtStatus.Text = bug.Status;
+			txtComments.Text = bug.Comments;
 		}
 
 	}
