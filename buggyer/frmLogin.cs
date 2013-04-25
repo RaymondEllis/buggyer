@@ -107,6 +107,7 @@ namespace buggyer
 		private void tryConnect()
 		{
 			Server.UID = txtUID.Text;
+			Server.Database = txtDatabase.Text;
 			Server.Table = txtTable.Text;
 
 			StringBuilder str = new StringBuilder();

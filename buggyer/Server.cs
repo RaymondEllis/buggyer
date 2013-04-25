@@ -10,6 +10,7 @@ namespace buggyer
 	static class Server
 	{
 		public static MySqlConnection Connection;
+		public static string Database;
 		public static string Table;
 		public static string UID;
 

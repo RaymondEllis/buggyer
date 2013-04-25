@@ -22,6 +22,14 @@ namespace buggyer
 		private void frmBugs_Load(object sender, EventArgs e)
 		{
 
+			Reload();
+		}
+
+		public void Reload()
+		{
+			grpBugInfo.Enabled = false;
+			lstBugs.Items.Clear();
+
 			//Get bugs for the current user.
 			if (Server.Open())
 			{
@@ -44,7 +52,11 @@ namespace buggyer
 
 		private void lstBugs_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (lstBugs.SelectedIndex == -1) return;
+			if (lstBugs.SelectedIndex == -1)
+			{
+				grpBugInfo.Enabled = false;
+				return;
+			}
 			Bug bug = Bugs[lstBugs.SelectedIndex];
 			lblDescription.Text = bug.Description;
 
@@ -56,6 +68,20 @@ namespace buggyer
 			txtPriority.Text = bug.Priority.ToString();
 			txtStatus.Text = bug.Status;
 			txtComments.Text = bug.Comments;
+
+			grpBugInfo.Enabled = true;
+		}
+
+		private void btnReload_Click(object sender, EventArgs e)
+		{
+			Reload();
+		}
+
+		private void btnNewBug_Click(object sender, EventArgs e)
+		{
+			frmNewBug frmNewBug = new frmNewBug();
+			frmNewBug.ShowDialog();
+			Reload();
 		}
 
 	}

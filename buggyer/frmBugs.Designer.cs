@@ -30,19 +30,21 @@
 		{
 			this.lstBugs = new System.Windows.Forms.ListBox();
 			this.grpBugInfo = new System.Windows.Forms.GroupBox();
-			this.label1 = new System.Windows.Forms.Label();
 			this.txtComments = new System.Windows.Forms.TextBox();
-			this.txtAssignedTo = new System.Windows.Forms.TextBox();
-			this.lblDescription = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.lblReportedBy = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
 			this.lblReportedAt = new System.Windows.Forms.Label();
+			this.lblDescription = new System.Windows.Forms.Label();
+			this.lblReportedBy = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.txtAssignedTo = new System.Windows.Forms.TextBox();
+			this.txtStatus = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtPriority = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.txtStatus = new System.Windows.Forms.TextBox();
-			this.label7 = new System.Windows.Forms.Label();
+			this.btnNewBug = new System.Windows.Forms.Button();
+			this.btnReload = new System.Windows.Forms.Button();
 			this.grpBugInfo.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -77,15 +79,6 @@
 			this.grpBugInfo.TabStop = false;
 			this.grpBugInfo.Text = "Bug:";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(6, 16);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(63, 13);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Description:";
-			// 
 			// txtComments
 			// 
 			this.txtComments.Location = new System.Drawing.Point(206, 29);
@@ -95,12 +88,14 @@
 			this.txtComments.Size = new System.Drawing.Size(179, 161);
 			this.txtComments.TabIndex = 3;
 			// 
-			// txtAssignedTo
+			// lblReportedAt
 			// 
-			this.txtAssignedTo.Location = new System.Drawing.Point(85, 127);
-			this.txtAssignedTo.Name = "txtAssignedTo";
-			this.txtAssignedTo.Size = new System.Drawing.Size(115, 20);
-			this.txtAssignedTo.TabIndex = 3;
+			this.lblReportedAt.Location = new System.Drawing.Point(82, 104);
+			this.lblReportedAt.Name = "lblReportedAt";
+			this.lblReportedAt.Size = new System.Drawing.Size(118, 20);
+			this.lblReportedAt.TabIndex = 2;
+			this.lblReportedAt.Text = "<Date>";
+			this.lblReportedAt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lblDescription
 			// 
@@ -109,15 +104,6 @@
 			this.lblDescription.Size = new System.Drawing.Size(194, 55);
 			this.lblDescription.TabIndex = 2;
 			this.lblDescription.Text = "<Description>";
-			// 
-			// label2
-			// 
-			this.label2.Location = new System.Drawing.Point(6, 84);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(70, 20);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Reported by:";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// lblReportedBy
 			// 
@@ -128,6 +114,56 @@
 			this.lblReportedBy.Text = "<Name>";
 			this.lblReportedBy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(6, 16);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(63, 13);
+			this.label1.TabIndex = 2;
+			this.label1.Text = "Description:";
+			// 
+			// label7
+			// 
+			this.label7.Location = new System.Drawing.Point(6, 167);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(70, 20);
+			this.label7.TabIndex = 2;
+			this.label7.Text = "Status:";
+			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(6, 84);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(70, 20);
+			this.label2.TabIndex = 2;
+			this.label2.Text = "Reported by:";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// label6
+			// 
+			this.label6.Location = new System.Drawing.Point(6, 147);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(70, 20);
+			this.label6.TabIndex = 2;
+			this.label6.Text = "Priority:";
+			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// txtAssignedTo
+			// 
+			this.txtAssignedTo.Location = new System.Drawing.Point(85, 127);
+			this.txtAssignedTo.Name = "txtAssignedTo";
+			this.txtAssignedTo.Size = new System.Drawing.Size(115, 20);
+			this.txtAssignedTo.TabIndex = 3;
+			// 
+			// txtStatus
+			// 
+			this.txtStatus.Location = new System.Drawing.Point(85, 170);
+			this.txtStatus.Name = "txtStatus";
+			this.txtStatus.Size = new System.Drawing.Size(115, 20);
+			this.txtStatus.TabIndex = 3;
+			// 
 			// label3
 			// 
 			this.label3.Location = new System.Drawing.Point(6, 104);
@@ -136,15 +172,6 @@
 			this.label3.TabIndex = 2;
 			this.label3.Text = "Reported at:";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// lblReportedAt
-			// 
-			this.lblReportedAt.Location = new System.Drawing.Point(82, 104);
-			this.lblReportedAt.Name = "lblReportedAt";
-			this.lblReportedAt.Size = new System.Drawing.Size(118, 20);
-			this.lblReportedAt.TabIndex = 2;
-			this.lblReportedAt.Text = "<Date>";
-			this.lblReportedAt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// label5
 			// 
@@ -162,36 +189,33 @@
 			this.txtPriority.Size = new System.Drawing.Size(115, 20);
 			this.txtPriority.TabIndex = 3;
 			// 
-			// label6
+			// btnNewBug
 			// 
-			this.label6.Location = new System.Drawing.Point(6, 147);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(70, 20);
-			this.label6.TabIndex = 2;
-			this.label6.Text = "Priority:";
-			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnNewBug.Location = new System.Drawing.Point(329, 317);
+			this.btnNewBug.Name = "btnNewBug";
+			this.btnNewBug.Size = new System.Drawing.Size(75, 23);
+			this.btnNewBug.TabIndex = 2;
+			this.btnNewBug.Text = "New bug";
+			this.btnNewBug.UseVisualStyleBackColor = true;
+			this.btnNewBug.Click += new System.EventHandler(this.btnNewBug_Click);
 			// 
-			// txtStatus
+			// btnReload
 			// 
-			this.txtStatus.Location = new System.Drawing.Point(85, 170);
-			this.txtStatus.Name = "txtStatus";
-			this.txtStatus.Size = new System.Drawing.Size(115, 20);
-			this.txtStatus.TabIndex = 3;
-			// 
-			// label7
-			// 
-			this.label7.Location = new System.Drawing.Point(6, 167);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(70, 20);
-			this.label7.TabIndex = 2;
-			this.label7.Text = "Status:";
-			this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnReload.Location = new System.Drawing.Point(248, 317);
+			this.btnReload.Name = "btnReload";
+			this.btnReload.Size = new System.Drawing.Size(75, 23);
+			this.btnReload.TabIndex = 2;
+			this.btnReload.Text = "Reload";
+			this.btnReload.UseVisualStyleBackColor = true;
+			this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
 			// 
 			// frmBugs
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(412, 321);
+			this.ClientSize = new System.Drawing.Size(412, 347);
+			this.Controls.Add(this.btnReload);
+			this.Controls.Add(this.btnNewBug);
 			this.Controls.Add(this.grpBugInfo);
 			this.Controls.Add(this.lstBugs);
 			this.Name = "frmBugs";
@@ -220,5 +244,7 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtStatus;
 		private System.Windows.Forms.TextBox txtPriority;
+		private System.Windows.Forms.Button btnNewBug;
+		private System.Windows.Forms.Button btnReload;
 	}
 }
