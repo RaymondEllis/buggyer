@@ -30,8 +30,8 @@ namespace buggyer
 			if (Server.Open())
 			{
 				StringBuilder query = new StringBuilder();
-				
-				query.Append("INSERT INTO `" +Server.Database+"`.`" + Server.Table + "` (");
+
+				query.Append("INSERT INTO `" + Server.Database + "`.`" + Server.Table + "` (");
 				query.Append("\n`id`,`summary`,`description`,`reported by`,`reported at`,`assigned to`,`priority`,`status`,`comments`");
 				query.Append("\n)");
 				query.Append("\nVALUES (");

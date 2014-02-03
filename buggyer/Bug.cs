@@ -35,7 +35,7 @@ namespace buggyer
 
 		public override string ToString()
 		{
-			StringBuilder str=new StringBuilder();
+			StringBuilder str = new StringBuilder();
 			//id
 			str.Append(id);
 			str.Append(' ', 4 - id.ToString().Length);
