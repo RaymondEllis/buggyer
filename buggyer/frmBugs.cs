@@ -28,6 +28,7 @@ namespace buggyer
 		public void Reload()
 		{
 			grpBugInfo.Enabled = false;
+			Bugs.Clear();
 			lstBugs.Items.Clear();
 
 			//Get bugs for the current user.
