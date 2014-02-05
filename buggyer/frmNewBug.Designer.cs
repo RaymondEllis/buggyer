@@ -35,10 +35,8 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtAssignedTo = new System.Windows.Forms.TextBox();
 			this.txtStatus = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtPriority = new System.Windows.Forms.TextBox();
-			this.lblReportedAt = new System.Windows.Forms.Label();
 			this.txtDescription = new System.Windows.Forms.TextBox();
 			this.txtSummary = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -48,9 +46,9 @@
 			// 
 			// lblReportedBy
 			// 
-			this.lblReportedBy.Location = new System.Drawing.Point(88, 97);
+			this.lblReportedBy.Location = new System.Drawing.Point(94, 103);
 			this.lblReportedBy.Name = "lblReportedBy";
-			this.lblReportedBy.Size = new System.Drawing.Size(118, 20);
+			this.lblReportedBy.Size = new System.Drawing.Size(115, 20);
 			this.lblReportedBy.TabIndex = 2;
 			this.lblReportedBy.Text = "<Name>";
 			this.lblReportedBy.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -66,7 +64,7 @@
 			// 
 			// label7
 			// 
-			this.label7.Location = new System.Drawing.Point(12, 180);
+			this.label7.Location = new System.Drawing.Point(15, 178);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(70, 20);
 			this.label7.TabIndex = 2;
@@ -75,7 +73,7 @@
 			// 
 			// label2
 			// 
-			this.label2.Location = new System.Drawing.Point(12, 97);
+			this.label2.Location = new System.Drawing.Point(15, 103);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(70, 20);
 			this.label2.TabIndex = 2;
@@ -84,7 +82,7 @@
 			// 
 			// label6
 			// 
-			this.label6.Location = new System.Drawing.Point(12, 160);
+			this.label6.Location = new System.Drawing.Point(15, 153);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(70, 20);
 			this.label6.TabIndex = 2;
@@ -93,30 +91,22 @@
 			// 
 			// txtAssignedTo
 			// 
-			this.txtAssignedTo.Location = new System.Drawing.Point(91, 140);
+			this.txtAssignedTo.Location = new System.Drawing.Point(94, 128);
 			this.txtAssignedTo.Name = "txtAssignedTo";
 			this.txtAssignedTo.Size = new System.Drawing.Size(115, 20);
 			this.txtAssignedTo.TabIndex = 2;
 			// 
 			// txtStatus
 			// 
-			this.txtStatus.Location = new System.Drawing.Point(91, 183);
+			this.txtStatus.Location = new System.Drawing.Point(94, 178);
 			this.txtStatus.Name = "txtStatus";
 			this.txtStatus.Size = new System.Drawing.Size(115, 20);
 			this.txtStatus.TabIndex = 4;
-			// 
-			// label3
-			// 
-			this.label3.Location = new System.Drawing.Point(12, 117);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(70, 20);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "Reported at:";
-			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.txtStatus.Text = "Open";
 			// 
 			// label5
 			// 
-			this.label5.Location = new System.Drawing.Point(12, 137);
+			this.label5.Location = new System.Drawing.Point(15, 128);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(70, 20);
 			this.label5.TabIndex = 2;
@@ -125,19 +115,11 @@
 			// 
 			// txtPriority
 			// 
-			this.txtPriority.Location = new System.Drawing.Point(91, 163);
+			this.txtPriority.Location = new System.Drawing.Point(94, 153);
 			this.txtPriority.Name = "txtPriority";
 			this.txtPriority.Size = new System.Drawing.Size(115, 20);
 			this.txtPriority.TabIndex = 3;
-			// 
-			// lblReportedAt
-			// 
-			this.lblReportedAt.Location = new System.Drawing.Point(88, 117);
-			this.lblReportedAt.Name = "lblReportedAt";
-			this.lblReportedAt.Size = new System.Drawing.Size(118, 20);
-			this.lblReportedAt.TabIndex = 2;
-			this.lblReportedAt.Text = "<Date>";
-			this.lblReportedAt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.txtPriority.Text = "1";
 			// 
 			// txtDescription
 			// 
@@ -166,7 +148,7 @@
 			// 
 			// btnAdd
 			// 
-			this.btnAdd.Location = new System.Drawing.Point(310, 209);
+			this.btnAdd.Location = new System.Drawing.Point(310, 207);
 			this.btnAdd.Name = "btnAdd";
 			this.btnAdd.Size = new System.Drawing.Size(75, 23);
 			this.btnAdd.TabIndex = 6;
@@ -180,7 +162,7 @@
 			this.txtComments.Multiline = true;
 			this.txtComments.Name = "txtComments";
 			this.txtComments.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-			this.txtComments.Size = new System.Drawing.Size(179, 161);
+			this.txtComments.Size = new System.Drawing.Size(179, 156);
 			this.txtComments.TabIndex = 5;
 			// 
 			// frmNewBug
@@ -191,13 +173,11 @@
 			this.Controls.Add(this.btnAdd);
 			this.Controls.Add(this.txtDescription);
 			this.Controls.Add(this.txtComments);
-			this.Controls.Add(this.lblReportedAt);
 			this.Controls.Add(this.txtPriority);
 			this.Controls.Add(this.lblReportedBy);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.txtStatus);
 			this.Controls.Add(this.label2);
@@ -221,10 +201,8 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.TextBox txtAssignedTo;
 		private System.Windows.Forms.TextBox txtStatus;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtPriority;
-		private System.Windows.Forms.Label lblReportedAt;
 		private System.Windows.Forms.TextBox txtDescription;
 		private System.Windows.Forms.TextBox txtSummary;
 		private System.Windows.Forms.Label label4;

@@ -21,6 +21,7 @@ namespace buggyer
 		private void frmNewBug_Load(object sender, EventArgs e)
 		{
 			lblReportedBy.Text = Server.UID;
+			txtAssignedTo.Text = Server.UID;
 		}
 
 		private void btnAdd_Click(object sender, EventArgs e)
