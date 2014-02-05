@@ -29,31 +29,37 @@ namespace buggyer
 		{
 			if (Server.Open())
 			{
-				StringBuilder query = new StringBuilder();
+				MySqlCommand cmd = new MySqlCommand(
+					"INSERT INTO `" + Server.Database + "`.`" + Server.Table + "`\n" +
+					"(`id`,`summary`,`description`,`reported by`,`reported at`,`assigned to`,`priority`,`status`,`comments`)" +
+					"\n VALUES " +
+					"(NULL,@summary,@description,@reportedby,@reportedat,@assignedto,@priority,@status,@comments)", Server.Connection);
 
-				query.Append("INSERT INTO `" + Server.Database + "`.`" + Server.Table + "` (");
-				query.Append("\n`id`,`summary`,`description`,`reported by`,`reported at`,`assigned to`,`priority`,`status`,`comments`");
-				query.Append("\n)");
-				query.Append("\nVALUES (");
-				query.Append("\nNULL ,");
-				query.Append("\n'"); query.Append(txtSummary.Text.Replace("'", "''")); query.Append("',");
-				query.Append("\n'"); query.Append(txtDescription.Text.Replace("'", "''")); query.Append("',");
-				query.Append("\n'"); query.Append(lblReportedBy.Text.Replace("'", "''")); query.Append("',");
-				query.Append("\n'"); query.Append(lblReportedAt.Text.Replace("'", "''")); query.Append("',");
-				query.Append("\n'"); query.Append(txtAssignedTo.Text.Replace("'", "''")); query.Append("',");
-				query.Append("\n'"); query.Append(txtPriority.Text.Replace("'", "''")); query.Append("',");
-				query.Append("\n'"); query.Append(txtStatus.Text.Replace("'", "''")); query.Append("',");
-				query.Append("\n'"); query.Append(txtComments.Text.Replace("'", "''")); query.Append("'");
-				query.Append("\n);");
 
-				MySqlCommand cmd = new MySqlCommand(query.ToString(), Server.Connection);
+				cmd.Parameters.AddWithValue("@summary", txtSummary.Text);
+				cmd.Parameters.AddWithValue("@description", txtDescription.Text);
+				cmd.Parameters.AddWithValue("@reportedby", lblReportedBy.Text);
+				cmd.Parameters.AddWithValue("@reportedat", lblReportedAt.Text);
+				cmd.Parameters.AddWithValue("@assignedto", txtAssignedTo.Text);
+				cmd.Parameters.AddWithValue("@priority", txtPriority.Text);
+				cmd.Parameters.AddWithValue("@status", txtStatus.Text);
+				cmd.Parameters.AddWithValue("@comments", txtComments.Text);
+
 				try
 				{
 					cmd.ExecuteNonQuery();
+					this.Close();
 				}
-				catch (MySqlException ex) { Server.ShowError(ex.Message); }
+				catch (MySqlException ex)
+				{
+					Server.ShowError(ex.Message);
+				}
+				finally
+				{
+					Server.Close();
+				}
+
 			}
-			Server.Close();
 		}
 	}
 }
