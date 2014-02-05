@@ -27,6 +27,7 @@ namespace buggyer
 			Description = (string)reader["description"];
 			ReportedBy = (string)reader["reported by"];
 			ReportedAt = (DateTime)reader["reported at"];
+			if (ReportedAt != null) ReportedAt = ReportedAt.ToLocalTime();
 			AssignedTo = (string)reader["assigned to"];
 			Priority = (sbyte)reader["priority"];
 			Status = (string)reader["status"];

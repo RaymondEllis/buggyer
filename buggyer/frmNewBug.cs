@@ -20,8 +20,6 @@ namespace buggyer
 
 		private void frmNewBug_Load(object sender, EventArgs e)
 		{
-			//TODO: ReportedAt is not saving properly.
-			lblReportedAt.Text = DateTime.Now.ToString();
 			lblReportedBy.Text = Server.UID;
 		}
 
@@ -39,7 +37,8 @@ namespace buggyer
 				cmd.Parameters.AddWithValue("@summary", txtSummary.Text);
 				cmd.Parameters.AddWithValue("@description", txtDescription.Text);
 				cmd.Parameters.AddWithValue("@reportedby", lblReportedBy.Text);
-				cmd.Parameters.AddWithValue("@reportedat", lblReportedAt.Text);
+				string reportedAt = DateTime.UtcNow.ToString("yyyy-MM-dd H:mm:ss");
+				cmd.Parameters.AddWithValue("@reportedat", reportedAt);
 				cmd.Parameters.AddWithValue("@assignedto", txtAssignedTo.Text);
 				cmd.Parameters.AddWithValue("@priority", txtPriority.Text);
 				cmd.Parameters.AddWithValue("@status", txtStatus.Text);
